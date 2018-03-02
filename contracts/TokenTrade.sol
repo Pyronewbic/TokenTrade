@@ -15,6 +15,7 @@ contract TokenTrade is Owner,EIP20Interface {
     string public symbol;
     uint64 public conversionRate;
 
+    event Burn(address indexed _owner, uint256 _value);
     event Deposit(address indexed _owner, uint256 _value);
     event Withdraw(address indexed _owner, uint256 _value);
 
@@ -50,6 +51,15 @@ contract TokenTrade is Owner,EIP20Interface {
     function withdraw(uint256 _value) public onlyOwner returns (bool success){
         owner.transfer(_value*1000000000000000000); //in wei
         Withdraw(owner,_value*1000000000000000000);
+        return true;
+    }
+
+    function burn(uint256 _value) public returns (bool success) {
+        require(_value<=balances[msg.sender]);
+        balances[msg.sender]-=_value;
+        totalSupply -= _value;
+        Burn(msg.sender,_value);
+        Transfer(msg.sender,address(0),_value);
         return true;
     }
 

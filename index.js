@@ -56,10 +56,6 @@ Token.methods.transfer('0xf17f52151EbEF6C7334FAD080c5704D77216b732',80).send()
 .then((res)=>{console.log(res)})
 .catch((error)=>{console.log(error)})
 
-Token.methods.balanceOf('0x627306090abaB3A6e1400e9345bC60c78a8BEf57').call()
-.then((res)=>{console.log(res)})
-.catch((error)=>{console.log(error)})
-
 //send eth to the contract for the token
 web3.eth.sendTransaction({
 	from: '0xf17f52151EbEF6C7334FAD080c5704D77216b732',
@@ -68,6 +64,15 @@ web3.eth.sendTransaction({
 }).then(receipt=>{
 	console.log(receipt)
 })
+
+//Burns token
+Token.methods.burn(10).send()
+.then((res)=>{console.log(res)})
+.catch((error)=>{console.log(error)})
+
+Token.methods.balanceOf('0x627306090abaB3A6e1400e9345bC60c78a8BEf57').call()
+.then((res)=>{console.log(res)})
+.catch((error)=>{console.log(error)})
 
 //sends eth to owner account
 Token.methods.withdraw(10).send()

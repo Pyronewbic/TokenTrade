@@ -12,5 +12,13 @@
     "web3": "^1.0.0-beta.30"
   },
   "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pyronewbic/TokenTrade.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Pyronewbic/TokenTrade/issues"
+  },
+  "homepage": "https://github.com/Pyronewbic/TokenTrade#readme",
   "description": ""
 }
