@@ -1,0 +1,16 @@
+{
+  "name": "tokentrade",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "solc": "^0.4.19",
+    "web3": "^1.0.0-beta.30"
+  },
+  "devDependencies": {},
+  "description": ""
+}
